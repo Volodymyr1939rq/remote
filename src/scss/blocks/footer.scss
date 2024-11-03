@@ -1,0 +1,276 @@
+main{
+    display:flex;
+    flex-direction:row;
+    gap:50px;
+  }
+  .black-container{
+    width:888px;
+  height:800px;
+  background-color: #333333;
+  margin-bottom:80px;
+  padding-top: 50px;
+  }
+  .white-border{
+    width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  background-color: #aaaaaa;
+  border: 20px solid #ffffff;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: 40px;
+  }
+  .profile-photo{
+    border-radius: 52%;
+  }
+  .profile-text{
+    font-size: 75px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-family: "Raleway Roman";
+  text-align: center;
+  margin-top: 75px;
+  }
+  .Kevin.C{
+    font-weight:700;
+  }
+  .Silva{
+    font-weight:400;
+  }
+  
+  .profile-subtext{
+    font-size: 35px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-family: "Raleway Roman";
+  text-align: center;
+  margin-top:5px;
+  }
+  .white-emphasize{
+    width: 580px;
+  height: 4px;
+  background-color: #ffffff;
+  margin-left:150px;
+  margin-top:15px;
+  }
+  .green-emphasize{
+    width: 250px;
+  height: 8px;
+  background-color: #30978a;
+  margin-left:155px;
+  }
+  .icon-container{
+    display:block;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+    padding-bottom:12px;
+  }
+  .gray-background{
+    display:flex;
+    width: 895px;
+  height: 100px;
+  background-color: #e0e0e0;
+  padding-top:4px;
+    align-items:center;
+    margin-bottom: 25px;
+  }
+  .mobile-number{
+    font-size: 40px;
+  line-height: 52px;
+  color: #333333;
+  font-weight: bold;
+  font-family: "Raleway Roman";
+  margin-left:35px;
+  }
+  .phone{
+    width: 26px;
+    height: 44px;
+    padding-left:35px;
+    margin-left:11px;
+  }
+  .web{
+    width: 36px;
+  height: 37px;
+  border-radius: 2px;
+  padding-left:35px;
+  margin-left:1px;
+  }
+  .email-post{
+    font-size: 40px;
+  line-height: 52px;
+  color: #333333;
+  font-weight: 500;
+  font-style: italic;
+  font-family: "Raleway Italic";
+  margin-left:35px;
+  }
+  .Line{
+    width: 4px;
+  height: 100px;
+  background-color: #333333;
+  margin-left:40px;
+  }
+  .point{
+    width: 26px;
+  height: 40px;
+  border-radius: 5px;
+  padding-left:35px;
+  margin-left:11px;
+  }
+  .Pointer{
+    font-size: 40px;
+  line-height: 52px;
+  color: #333333;
+  font-weight: bold;
+  font-family: "Raleway Roman";
+  margin-left:35px;
+  }
+  .about-me-container{
+    margin-bottom:auto;
+  }
+  .about-me-line{
+    margin-top:6px;
+    width: 900px;
+  height: 4px;
+  background-color: #333333;
+  display:flex;
+  z-index:1;
+  position:absolute;
+  }
+  .AboutMe-text{
+    margin-bottom:35px;
+  }
+  .about-me-text{
+    font-style:italic;
+    font-weight:700;
+    margin-bottom:40px;
+  }
+  .About-me-Text{
+    width: 900px;
+  height: 518px;
+  font-size: 40px;
+  letter-spacing: 1px;
+  line-height: 49px;
+  color: #333333;
+  font-family: "Raleway ";
+  text-align: left;
+  margin-top:70px;
+  }
+  .language-section {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .languages-container{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width:330px;
+  margin-bottom:5px;
+  
+  }
+  .language-chart{
+    position:relative;
+    margin-top:30px;
+  height:255px;
+  width:255px;
+  margin-right:74px;
+  }
+  .language-chart canvas {
+    position: relative;
+    z-index: 1;
+  }
+  .language-label{
+   position:absolute;
+   top:calc(50% + 40px);
+   top:63%;
+   left:50%;
+   transform:translate(-50%,-50%);
+   font-size: 40px;
+   font-weight:900;
+    text-align: center;
+    z-index: 2;
+  }
+  .language-percentage {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 45px;
+    font-weight:900;
+    color: #333333;
+    text-align: center;
+    z-index: 2;
+  }
+  .Hobbies-container{
+    margin-bottom:29px;
+  }
+  .comparation{
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+    gap:20px;
+  }
+  .Gym{
+    display:flex;
+    margin-top:10px;
+    justify-content:flex-start;
+    width:100%;
+  }
+  .Gym .black-border{
+    margin-top:12px;
+  }
+  .training{
+    font-size: 34px;
+  text-transform: uppercase;
+  color: #333333;
+  font-weight: 800;
+  font-style: italic;
+  font-family: "Raleway Italic";
+  text-align: center;
+  margin-top:20px;
+  }
+  .black-border{
+    width: 278px; 
+    height: 175px; 
+    border: 6px solid #333333;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 45px; 
+    margin-right: 12px; 
+    box-sizing: border-box;
+  }
+  .icon{
+    width: 96px;
+  height: 68px;
+  border-radius: 3px;
+  }
+  .icon-conteiner{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin-top:0;
+  flex:1;
+  justify-content:center;
+  }
+  .game-icon{
+    width: 98px;
+  height: 68px;
+  border-radius: 0px;
+  }
+  .music-icon{
+    width: 67px;
+  height: 68px;
+  }
+  .guming-icon{
+    width: 110px;
+    height: 68px;
+  }

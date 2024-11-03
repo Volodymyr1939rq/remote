@@ -1,0 +1,362 @@
+.html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  
+  h1, h2, h3, h4, p, ul {
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  } 
+.job-experience-title{
+font-size: 70px;
+text-transform: uppercase;
+color: #333333;
+font-weight: 800;
+font-family: "Raleway Roman";
+}
+
+.line-position{
+    position: relative;
+}
+
+.green-line{
+    position: absolute;
+    display: block;
+    width: 100px;
+height: 10px;
+background-color: #30978a;
+z-index: 10;
+}
+
+.line{
+    margin-top: 6px;
+    position: absolute;
+    display: block;
+    width: 1280px;
+height: 4px;
+background-color: #333333;
+z-index: 1;
+}
+
+.left-container{
+    padding-left: 75PX;
+
+}
+
+.job-experience-info{
+    margin-top: 78px;
+    display: flex;
+    flex-direction:column;
+    max-width: 1280px;
+    
+}
+
+.block{
+    width: 250px;
+height: 60px;
+background-color: #30978a;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-right:100px;
+}
+
+.block-text{
+    font-size: 30px;
+color: #ffffff;
+font-weight: bold;
+font-family: "Raleway Roman";
+text-align: right;
+}
+.job-experience-item{
+    display: flex;
+    flex-direction:row;
+    align-items: flex-start; 
+    margin-bottom: 30px;  
+}
+.job-experience-location{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+ max-width:930px;
+}
+.job-experience-text{
+  width: 930px;
+font-size: 33px;
+letter-spacing: 1px;
+line-height: 46px;
+color: #333333;
+font-family: "Raleway";
+text-align: left;
+margin-bottom:32px;
+padding-top:15px;
+}
+.experience-text{
+  width: 930px;
+font-size: 33px;
+letter-spacing: 1px;
+line-height: 46px;
+color: #333333;
+font-family: "Raleway";
+text-align: left;
+margin-bottom:32px;
+padding-top:15px;
+}
+.title{
+  font-size: 46px;
+  text-transform: uppercase;
+  color: #333333;
+  font-weight: 800;
+  font-family: "Raleway Roman";
+}
+.implication{
+  font-size: 30px;
+color: #333333;
+font-weight: bold;
+font-style: italic;
+font-family: "Raleway Italic";
+}
+.location{
+  font-size: 26px;
+color: #30978a;
+font-weight: 800;
+font-style: italic;
+font-family: "Raleway Italic";
+text-align: right;
+}
+.education-location{
+  font-size: 30px;
+color: #333333;
+font-weight: bold;
+font-style: italic;
+font-family: "Raleway Italic";
+}
+.education-text{
+  width: 910px;
+height: 145px;
+font-size: 33px;
+letter-spacing: 1px;
+line-height: 46px;
+color: #333333;
+font-family: "Raleway Roman";
+text-align: left;
+padding-top:15px;
+}
+.education-info{
+  margin-top: 78px;
+    display: flex;
+    flex-direction:column;
+    max-width: 1280px;
+}
+.references-info{
+  margin-top: 78px;
+  display: flex;
+  flex-direction:row;
+  max-width: 1280px;
+  margin-left:10px;
+}
+.references-item{
+  margin-right:100px;
+}
+.adress{
+  font-size: 40px;
+  color: #30978a;
+  font-weight: bold;
+  font-style: italic;
+  font-family: "Raleway Italic";
+}
+.number{
+  font-size: 40px;
+color: #333333;
+font-family: "Raleway Roman";
+}
+.email{
+  font-size: 40px;
+  color: #333333;
+  font-family: "Raleway Roman";
+}
+.white-line{
+  position: absolute;
+  width: 376px;
+height: 8px;
+background-color: #f0f0f0;
+}
+.skills-conteiner-item{
+  padding:10px;
+  margin-top:10px;
+  position:relative;
+ 
+}
+.skills-item-name{
+  margin-top:13px;
+  font-size: 20px;
+  color: #333333;
+  font-weight: bold;
+  font-family: "Raleway Roman";
+  margin-bottom:10px;
+}
+
+.line-container{
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.skills-line{
+  position: absolute;
+  width: 301px;
+height: 8px;
+background-color: #30978a;
+}
+
+.green-block{
+  margin-left: 290px;
+  position: absolute;
+  width: 23px;
+height: 23px;
+background-color: #30978a;
+}
+.skills-iteme{
+  margin-top:30px;
+ margin-right:350px;
+ margin-left:90px;
+  
+}
+.skills-item{
+  margin-top:30px;
+ margin-right:350px;
+ margin-left:40px;
+  
+}
+.skills-info{
+  margin-top: 30px;
+  display:flex;
+  flex-direction:row;
+  max-width: 1280px;
+  margin-left:25px;
+}
+.ilustrator-line{
+  position: absolute;
+  width: 226px;
+height: 8px;
+background-color: #30978a;
+}
+.microsoft-line{
+  position: absolute;
+  width: 248px;
+height: 8px;
+background-color: #30978a;
+}
+.powerpoint-line{
+  position: absolute;
+  width: 301px;
+height: 8px;
+background-color: #30978a;
+}
+.green-block-progresive{
+  position:absolute;
+  margin-left:210px;
+  width: 23px;
+  height: 23px;
+  background-color: #30978a;
+}
+.skills-item-Adobe{
+  margin-top:13px;
+  font-size: 20px;
+  color: #333333;
+  font-weight: bold;
+  font-family: "Raleway Roman";
+  margin-bottom:10px;
+}
+.skills-item-Word{
+  margin-top:13px;
+  font-size: 20px;
+  color: #333333;
+  font-weight: bold;
+  font-family: "Raleway Roman";
+  margin-bottom:10px;
+}
+.skills-line-Point{
+  margin-top:13px;
+  font-size: 20px;
+  color: #333333;
+  font-weight: bold;
+  font-family: "Raleway Roman";
+  margin-bottom:10px;
+}
+.green-block-block{
+  position:absolute;
+  margin-left:225px;
+  width: 23px;
+  height: 23px;
+  background-color: #30978a;
+}
+.container-reference-container{
+ align-items:center;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+  width: 100%;
+  min-height: 400px;
+  background-color: #e0e0e0;
+  padding:5px ;
+  margin-bottom:30px;
+  
+ 
+}
+.lin-positioner{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-top:20px;
+
+}
+.container-rederence-container{
+margin-bottom:135px;
+}
+.skills-box{
+  margin-left:75px;
+  flex-direction:row;
+  display:flex;
+}
+.skills-point{
+  margin-left:55px;
+  margin-top: 30px;
+}
+.skill-line{
+  width:820px;
+height: 4px;
+background-color: #333333;
+z-index: 1;
+}
+.greens-line{
+  width: 100px;
+height: 10px;
+background-color: #30978a;
+}
+.jobb-experience-title{
+  font-size: 70px;
+text-transform: uppercase;
+color: #333333;
+font-weight: 800;
+font-family: "Raleway Roman";
+margin-right:665px;
+}
