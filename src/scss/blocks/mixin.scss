@@ -1,0 +1,52 @@
+@mixin reset{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+
+@mixin flex($justify: flex-start, $align: stretch, $direction: row, $gap: 0){
+    display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  gap: $gap;
+}
+
+@mixin text($size: 2.4rem, $weight: bold, $lineHeight: 1.4) {
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $lineHeight;
+    
+  }
+
+  @mixin line($width: 100%, $height: 3px, $color: #333, $position: relative, $zIndex: 1, $top: 0) {
+    width: $width;
+    height: $height;
+    background-color: $color;
+    position: $position;
+    z-index: $zIndex;
+    top: $top;
+  }
+
+  @mixin button($bgColor: #30978a, $color: white, $padding: 5px 15px, $borderRadius: 0) {
+    background-color: $bgColor;
+    color: $color;
+    padding: $padding;
+    border-radius: $borderRadius;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  @mixin progress-bar($bgColor: #d6d6d6, $progressColor: #30978a, $height: 8px, $width: 90%) {
+    background-color: $bgColor;
+    height: $height;
+    width: $width;
+  
+    .progress-bar {
+      background-color: $progressColor;
+      height: 100%;
+      border-radius: 0;
+    }
+  }

@@ -1,362 +1,529 @@
-.html {
-    scroll-behavior: smooth;
-  }
-  
-  body {
-    font-size: 16px;
-    font-weight: 400;
-  }
-  
-  h1, h2, h3, h4, p, ul {
-    padding: 0;
-    margin: 0;
-  }
-  
-  ul {
-    list-style: none;
-  }
-  
-  a {
-    text-decoration: none;
-  }
-  
-  img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-  } 
-.job-experience-title{
-font-size: 70px;
-text-transform: uppercase;
-color: #333333;
-font-weight: 800;
-font-family: "Raleway Roman";
+@use 'mixin' as *;
+@use 'colors' as *;
+body {
+ @include reset;
+  font-family: 'Raleway', sans-serif;
+  color: $text-color;
+  background-color: $background-color; 
+
+ul {
+  list-style: none;
+  padding: 0;
 }
 
-.line-position{
-    position: relative;
+a {
+  text-decoration: none;
+  color: inherit;
+}
+h1, h2, h3, h4, h5, h6 {
+  @include text;
+ }
 }
 
-.green-line{
-    position: absolute;
-    display: block;
-    width: 100px;
-height: 10px;
-background-color: #30978a;
-z-index: 10;
-}
-
-.line{
-    margin-top: 6px;
-    position: absolute;
-    display: block;
-    width: 1280px;
-height: 4px;
-background-color: #333333;
-z-index: 1;
-}
-
-.left-container{
-    padding-left: 75PX;
-
-}
-
-.job-experience-info{
-    margin-top: 78px;
-    display: flex;
-    flex-direction:column;
-    max-width: 1280px;
-    
-}
-
-.block{
-    width: 250px;
-height: 60px;
-background-color: #30978a;
-display: flex;
-align-items: center;
-justify-content: center;
-margin-right:100px;
-}
-
-.block-text{
-    font-size: 30px;
-color: #ffffff;
-font-weight: bold;
-font-family: "Raleway Roman";
-text-align: right;
-}
-.job-experience-item{
-    display: flex;
-    flex-direction:row;
-    align-items: flex-start; 
-    margin-bottom: 30px;  
-}
-.job-experience-location{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
- max-width:930px;
-}
-.job-experience-text{
-  width: 930px;
-font-size: 33px;
-letter-spacing: 1px;
-line-height: 46px;
-color: #333333;
-font-family: "Raleway";
-text-align: left;
-margin-bottom:32px;
-padding-top:15px;
-}
-.experience-text{
-  width: 930px;
-font-size: 33px;
-letter-spacing: 1px;
-line-height: 46px;
-color: #333333;
-font-family: "Raleway";
-text-align: left;
-margin-bottom:32px;
-padding-top:15px;
-}
-.title{
-  font-size: 46px;
-  text-transform: uppercase;
-  color: #333333;
-  font-weight: 800;
-  font-family: "Raleway Roman";
-}
-.implication{
-  font-size: 30px;
-color: #333333;
-font-weight: bold;
-font-style: italic;
-font-family: "Raleway Italic";
-}
-.location{
-  font-size: 26px;
-color: #30978a;
-font-weight: 800;
-font-style: italic;
-font-family: "Raleway Italic";
-text-align: right;
-}
-.education-location{
-  font-size: 30px;
-color: #333333;
-font-weight: bold;
-font-style: italic;
-font-family: "Raleway Italic";
-}
-.education-text{
-  width: 910px;
-height: 145px;
-font-size: 33px;
-letter-spacing: 1px;
-line-height: 46px;
-color: #333333;
-font-family: "Raleway Roman";
-text-align: left;
-padding-top:15px;
-}
-.education-info{
-  margin-top: 78px;
-    display: flex;
-    flex-direction:column;
-    max-width: 1280px;
-}
-.references-info{
-  margin-top: 78px;
-  display: flex;
-  flex-direction:row;
-  max-width: 1280px;
-  margin-left:10px;
-}
-.references-item{
-  margin-right:100px;
-}
-.adress{
-  font-size: 40px;
-  color: #30978a;
-  font-weight: bold;
-  font-style: italic;
-  font-family: "Raleway Italic";
-}
-.number{
-  font-size: 40px;
-color: #333333;
-font-family: "Raleway Roman";
-}
-.email{
-  font-size: 40px;
-  color: #333333;
-  font-family: "Raleway Roman";
-}
-.white-line{
-  position: absolute;
-  width: 376px;
-height: 8px;
-background-color: #f0f0f0;
-}
-.skills-conteiner-item{
-  padding:10px;
-  margin-top:10px;
-  position:relative;
- 
-}
-.skills-item-name{
-  margin-top:13px;
-  font-size: 20px;
-  color: #333333;
-  font-weight: bold;
-  font-family: "Raleway Roman";
-  margin-bottom:10px;
-}
-
-.line-container{
+.Job-line {
   position: relative;
+  margin-top: 10px;
+  margin-bottom: 40px;
+
+.job-title {
+  font-size: 1.8rem; 
+  font-weight: bold;
+}
+.company-name {
+  font-size: 1.6rem !important;
+  font-style: italic;
+  font-weight:bold;
+  margin-bottom: 5px;
+}
+.green-line {
+  @include line(80px, 6px, #30978a, absolute, 2, 0); 
+  display: inline-block;
+}
+
+.line {
+  @include line(100%, 3px, #333, absolute, 1, 2px);
+  display: inline-block;
+}
+}
+.d-flex{
+  display: flex;
+  gap: 15px;
+  align-items:flex-start;
+
+&.d-flex.justify-content-between.align-items-center p {
+  margin-bottom: 0; 
+ }
+}
+.text-primary{
+  text-align: right;
+  color:$primary-color !important;
+  font-weight:bold;
+  font-style: italic;
+}
+.description {
+  font-size: 1.4rem; 
+  line-height: 1.7;
+}
+.fw-bold.text-muted {
+  flex: 1; 
+}
+p{
+  line-height:2.3;
+}
+.date{
+  display: inline-block;
+  padding: 5px 15px;
+  background-color: $primary-color;
+  color: $white-color;
+  font-size: 14px;
+  font-weight: bold;
+  min-width: 120px; 
+  text-align: center;
+  line-height: 1.5;
+  margin-right: 15px;
+  margin-top: 1.0rem;
+}
+.reference-list {
+  display: flex !important; 
+  justify-content: space-between; 
+  align-items: flex-start; 
+  gap: 20px; 
+  list-style: none; 
+  padding: 0; 
+  margin: 0; 
+}
+
+.reference-list li {
+  flex: 1; 
+  max-width: 45%; 
+}
+
+.reference-list li h2 {
+  margin-bottom: 10px; 
+}
+
+.reference-list li p {
+  margin: 5px 0; 
+}
+.reference-list {
+  display: none; 
+}
+
+.job-title-container{
+  flex: 1;
+}
+.job-title-container h2,
+.job-title-container p {
+  margin: 0; 
+}
+
+.Adress{
+  color:$primary-color !important;
+  font-size:1.6rem;
+  font-style:italic;
+  font-weight:bold;
+  margin-bottom:0;
+}
+.telefon-number{
+ font-size: 27px;
+ color: $secondary-color;
+ font-family: "Raleway Roman";
+ line-height: 1.2;
+}
+.Email{
+  font-size: 27px;
+ color:$secondary-color;
+ font-family: "Raleway Roman";
+ line-height: 1.2;
+}
+.reference-item p {
+  line-height: 1.4; 
+  margin-bottom: 6px;
+  margin: 0; 
+}
+.skills-section {
+  background-color:$progress-bg; 
+  padding: 30px; 
+  box-shadow: none; 
+  border-radius: 0; 
+}
+.progress {
+  position: relative;
+  background-color:$background-color;
+  height: 8px;
+  width: 90%;
+  overflow: visible;
+  border-radius:0;
+}
+.progressive{
+  position: relative;
+  background-color: $background-color;
+  height: 8px;
+  width: 100%;
+  overflow: visible;
+  border-radius:0;
+}
+
+.progress-bar {
+  position: relative;
+  background-color: $primary-color;
+  height: 100%;
+  width: 90%; 
+  border-radius: 0;
+}
+
+.progress-bar-end {
+  position: absolute;
+  right: 0; 
+  top: 50%;
+  transform: translate(50%, -50%); 
+  width: 16px; 
+  height: 16px;
+  background-color: $primary-color;
+  z-index: 2;
+  border-radius:0;
+  margin-right: 55px;
+}
+.Microsoft-bar,
+.PowerPoint-bar
+{
+  position: absolute;
+  right: 0; 
+  top: 50%;
+  transform: translate(50%, -50%); 
+  width: 16px; 
+  height: 16px;
+  background-color: $primary-color;
+  z-index: 2;
+  border-radius:0;
+  margin-right: 90px;
+}
+.Adobe-bar{
+  position: absolute;
+  right: 0; 
+  top: 50%;
+  transform: translate(50%, -50%);
+  width: 16px; 
+  height: 16px;
+  background-color: $primary-color;
+  z-index: 2;
+  border-radius:0;
+  margin-right: 155px;
+}
+
+.width-90,.width-75{
+  width:300px;
+}
+.width-85{
+  width:260px;
+}
+.width-80{
+  width:230px;
+}
+
+.skill-name{
+  font-size: 1rem;
+  font-weight: bold; 
+  color: $text-color; 
+  margin-bottom: 5px;
+}
+.profile-card {
+  background-color: $secondary-color; 
+  color: $white-color; 
+  text-align: center; 
+  padding: 20px 15px; 
+  width: 410px; 
+  margin: 0 auto; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 15px; 
+  height:450px;
+  position: relative; 
+  margin-top: -30px;
+  margin-bottom: 50px;
+
+.profile-image {
+  width: 215px; 
+  height: 215px;
+  border-radius: 50%; 
+  background-color:$white-color; 
+  overflow: hidden; 
+  margin-top: 45px;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+h2 {
+  font-size: 30px; 
+  font-weight: bold;
+  margin: 10px 0 5px; 
+}
+.Kevin{
+  font-size:40px;
+  text-transform: uppercase;
+}
+.Designer{
+  font-size: 17px;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ color:$white-color;
+ font-family: "Raleway Roman";
+ text-align: center;
+ margin-top:-25px;
+}
+
+.profile-underline {
+  position: relative; 
+  width: 250px; 
+  height: 3px; 
+  background-color:$white-color; 
+  margin: -30px auto; 
+}
+
+.green-bar {
+  position: absolute; 
+  top: 0; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  width: 70px; 
+  height: 3px; 
+  background-color: $highlight-color; 
+
+ }
+}
+.contact-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+
+.contact-item {
   display: flex;
   align-items: center;
+  background-color:$progress-bg; 
+  padding: 15px 20px; 
+  min-height: 60px; 
+  position: relative; 
 }
 
-.skills-line{
-  position: absolute;
-  width: 301px;
-height: 8px;
-background-color: #30978a;
+.contact-icon {
+  color:$highlight-color; 
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; 
+  font-size: 1.5rem; 
+  margin-right: 15px; 
+  position: relative; 
 }
 
-.green-block{
-  margin-left: 290px;
+.divider {
+  width: 2px;
+  height: 100%; 
+  background-color:$divider-color; 
   position: absolute;
-  width: 23px;
-height: 23px;
-background-color: #30978a;
+  left: 60px; 
 }
-.skills-iteme{
-  margin-top:30px;
- margin-right:350px;
- margin-left:90px;
-  
-}
-.skills-item{
-  margin-top:30px;
- margin-right:350px;
- margin-left:40px;
-  
-}
-.skills-info{
-  margin-top: 30px;
-  display:flex;
-  flex-direction:row;
-  max-width: 1280px;
-  margin-left:25px;
-}
-.ilustrator-line{
-  position: absolute;
-  width: 226px;
-height: 8px;
-background-color: #30978a;
-}
-.microsoft-line{
-  position: absolute;
-  width: 248px;
-height: 8px;
-background-color: #30978a;
-}
-.powerpoint-line{
-  position: absolute;
-  width: 301px;
-height: 8px;
-background-color: #30978a;
-}
-.green-block-progresive{
-  position:absolute;
-  margin-left:210px;
-  width: 23px;
-  height: 23px;
-  background-color: #30978a;
-}
-.skills-item-Adobe{
-  margin-top:13px;
-  font-size: 20px;
-  color: #333333;
-  font-weight: bold;
-  font-family: "Raleway Roman";
-  margin-bottom:10px;
-}
-.skills-item-Word{
-  margin-top:13px;
-  font-size: 20px;
-  color: #333333;
-  font-weight: bold;
-  font-family: "Raleway Roman";
-  margin-bottom:10px;
-}
-.skills-line-Point{
-  margin-top:13px;
-  font-size: 20px;
-  color: #333333;
-  font-weight: bold;
-  font-family: "Raleway Roman";
-  margin-bottom:10px;
-}
-.green-block-block{
-  position:absolute;
-  margin-left:225px;
-  width: 23px;
-  height: 23px;
-  background-color: #30978a;
-}
-.container-reference-container{
- align-items:center;
- display:flex;
- flex-direction:column;
- justify-content:center;
-  width: 100%;
-  min-height: 400px;
-  background-color: #e0e0e0;
-  padding:5px ;
-  margin-bottom:30px;
-  
- 
-}
-.lin-positioner{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  margin-top:20px;
 
+.contact-text {
+  font-size: 1rem; 
+  color: $text-color; 
+  font-weight: bold; 
+  margin: 0; 
+  margin-left: 20px;
+ }
 }
-.container-rederence-container{
-margin-bottom:135px;
+
+.AboutMe-section{
+  margin-top: 40px;
 }
-.skills-box{
-  margin-left:75px;
-  flex-direction:row;
-  display:flex;
+
+.AboutMe-text{
+  font-size: 1.2rem; 
+  line-height: 1.6; 
+  margin-bottom: 15px;
 }
-.skills-point{
-  margin-left:55px;
-  margin-top: 30px;
+
+.about-me-text{
+  font-size: 1.2rem; 
+  font-style: italic; 
+  color:$text-color; 
+  margin-bottom: 15px;
 }
-.skill-line{
-  width:820px;
-height: 4px;
-background-color: #333333;
-z-index: 1;
+.mini-text{
+  font-size: 1.1rem;  
+  line-height: 1.4;
 }
-.greens-line{
-  width: 100px;
-height: 10px;
-background-color: #30978a;
+
+.language-section {
+  display: flex;
+  justify-content: space-around; 
+  align-items: center; 
+  gap: 20px;
+  margin-top: 20px; 
+
+
+.language-chart {
+  position: relative;
+  width: 130px;
+  height: 130px; 
+  margin: 0 auto;
 }
-.jobb-experience-title{
-  font-size: 70px;
-text-transform: uppercase;
-color: #333333;
-font-weight: 800;
-font-family: "Raleway Roman";
-margin-right:665px;
+
+.language-percentage {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.8rem;
+  font-weight: bold;
+  color:$text-color;
+  text-align: center;
 }
+
+.language-label {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  color:$color;
+  text-transform: capitalize;
+  text-align: center;
+  margin-top:-12px;
+  font-weight: bold;
+ }
+}
+
+.hobbies-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 15px; 
+  margin-top: 20px;
+  justify-items: center; 
+}
+
+.hobby-item {
+  border: 2px solid $divider-color; 
+  text-align: center;
+  padding: 10px;
+  width: 127px; 
+  height: 80px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hobby-item i {
+  font-size: 1.5rem; 
+  color: $highlight-color; 
+  margin-bottom: 5px;
+}
+
+.hobby-title {
+  font-size: 0.85rem; 
+  font-weight: bold;
+  color: $color;
+  text-transform: uppercase;
+}
+
+.hobby-item:nth-child(4) {
+  grid-column: 1 / span 1; 
+}
+
+.list-unstyled {
+  display: none; 
+}
+
+.list-unstyled.active {
+  display: block;
+}
+
+.toggle-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  color:$primary-color;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+
+.arrow {
+  transition: transform 0.3s;
+}
+
+.toggle-btn.active .arrow {
+  transform: rotate(180deg); 
+ }
+}
+
+button {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  &.btn-primary {
+    background-color: #30978a; 
+    color: #fff;
+
+    &:hover {
+      background-color: #257a6b; 
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      background-color: #1b5c51;
+      transform: translateY(0);
+    }
+  }
+
+  &.btn-secondary {
+    background-color: #6c757d; 
+    color: #fff;
+
+    &:hover {
+      background-color: #5a6268; 
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      background-color: #4e555b;
+      transform: translateY(0);
+    }
+  }
+}
+
+
+.load-data-btn-container {
+  display: flex;
+  gap: 10px; 
+  margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -10,6 +10,25 @@ const notify=require('gulp-notify');
 const webpack=require('webpack-stream');
 const babel=require('gulp-babel');
 const replace=require('gulp-replace');
+const browserSync = require('browser-sync').create();
+const newer = require('gulp-newer');
+
+
+const paths = {
+    data: {
+        src: './src/data/**/*.json',
+        dest: './dist/data',
+    },
+};
+  
+gulp.task('copyJson', function () {
+    return gulp
+        .src(paths.data.src)
+        .pipe(newer(paths.data.dest)) 
+        .pipe(gulp.dest(paths.data.dest))
+        .pipe(browserSync.stream());
+});
+
 gulp.task('js',function(){
     return gulp
     .src('./src/js/*.js')
@@ -18,15 +37,15 @@ gulp.task('js',function(){
     .pipe(webpack(require('./webpack.config.js')))
     .pipe(gulp.dest('./dist/js'))
 })
-gulp.task('clean',function(done){
-    if(fs.existsSync('./dist/')){
+
+gulp.task('clean', function(done) {
+    if (fs.existsSync('./dist/')) {
         return gulp
-        .src('./dist/',{read:false})
-        .pipe(clean({force:true}));
+            .src('./dist/', { read: false })
+            .pipe(clean({ force: true }));
     }
     done();
-})
-
+});
 const FileIncludeSetting={
     prefix:'@@',
     basepath:'@file',
@@ -46,12 +65,6 @@ return gulp
 .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('updatePaths', function() {
-    return gulp.src('./dist/*.html')
-    .pipe(replace(/\.\/?(img\/)/g, '/$1'))
-    .pipe(replace(/%20/g, ''))
-        .pipe(gulp.dest('./dist/'));
-});
 
 const plumberSassConfig={
     errorHandler:notify.onError({
@@ -60,6 +73,7 @@ const plumberSassConfig={
         sound:false
     }),
 }
+
 
 gulp.task('sass',function(){
     return gulp
@@ -80,7 +94,7 @@ gulp.task('copyImages',function(){
 
 const ServerOptions={
     livereload:true,
-    open:true
+    open:true,
 }
 gulp.task('startServer',function(){
     return gulp
@@ -88,16 +102,28 @@ gulp.task('startServer',function(){
     .pipe(server(ServerOptions));
 
 })
-gulp.task('watch',function(){
-    gulp.watch('./src/scss/**/*.scss',gulp.parallel('sass'));
-    gulp.watch('./src/**/*.html',gulp.parallel('IncludeFiles','updatePaths'));
-    gulp.watch('./src/img/**/*',gulp.parallel('copyImages','updatePaths'));
-    gulp.watch('./src/js/**/*.js',gulp.parallel('js'));
-})
+gulp.task('watch', function() {
+    
+    
 
+    // Відстеження змін у SCSS
+    gulp.watch('./src/scss/**/*.scss', gulp.series('sass')).on('change', browserSync.reload);
+
+    // Відстеження змін у HTML
+    gulp.watch('./src/**/*.html', gulp.series('IncludeFiles')).on('change', browserSync.reload);
+
+    // Відстеження змін у зображеннях
+    gulp.watch('./src/img/**/*', gulp.series('copyImages')).on('change', browserSync.reload);
+
+    // Відстеження змін у JavaScript
+    gulp.watch('./src/js/**/*.js', gulp.series('js')).on('change', browserSync.reload);
+
+   
+    gulp.watch(paths.data.src, gulp.series('copyJson')).on('change', browserSync.reload);
+});
 gulp.task('default', gulp.series(
     'clean',
-    gulp.parallel('IncludeFiles', 'sass', 'copyImages', 'js'),
-    gulp.parallel('updatePaths', 'startServer', 'watch')
+    gulp.parallel('IncludeFiles', 'sass', 'copyImages', 'js','copyJson'),
+    gulp.parallel( 'startServer', 'watch')
 ));
 
